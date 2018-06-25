@@ -298,7 +298,7 @@ class Client implements ClientInterface
         $oauthParams = array(
             'oauth_consumer_key' => $this->oauthConsumerKey,
             'oauth_token' => $this->oauthAccessToken,
-            'oauth_nonce' => \md5($now->getTimestamp() + \rand(0, 1000)),
+            'oauth_nonce' => \md5($now->getTimestamp() + \rand(0, 1000000)),
             'oauth_timestamp' => $now->getTimestamp(),
             'oauth_signature_method' => 'PLAINTEXT',
             'oauth_version' => '1.0',
@@ -615,5 +615,13 @@ class Client implements ClientInterface
     public function timeTracking()
     {
         return $this->collectionGenerator->getCollection($this, 'Timetracking');
+    }
+
+    /**
+     * @return CollectionInterface
+     */
+    public function bankAccount()
+    {
+        return $this->collectionGenerator->getCollection($this, 'BankAccount');
     }
 }

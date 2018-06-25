@@ -296,4 +296,9 @@ interface ClientInterface
      * @return CollectionInterface
      */
     public function timeTracking();
+
+    /**
+     * @return CollectionInterface
+     */
+    public function bankAccount();
 }
