@@ -301,4 +301,9 @@ interface ClientInterface
      * @return CollectionInterface
      */
     public function bankAccount();
+
+    /**
+     * @return CollectionInterface
+     */
+    public function addresses();
 }

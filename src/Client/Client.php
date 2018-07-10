@@ -624,4 +624,12 @@ class Client implements ClientInterface
     {
         return $this->collectionGenerator->getCollection($this, 'BankAccount');
     }
+
+    /**
+     * @return CollectionInterface
+     */
+    public function addresses()
+    {
+        return $this->collectionGenerator->getCollection($this, 'Addresses');
+    }
 }
